@@ -29,7 +29,7 @@ function DivisionOne() {
 
   return (
     <div>
-      <h1>Google Sheet Data</h1>
+      <h1>Monday United 2</h1>
       <ul>
         {sheetData.map((row, index) => (
           <li key={index}>
