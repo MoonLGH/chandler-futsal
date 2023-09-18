@@ -1,7 +1,10 @@
-import { LadderData } from "@/types/FixturesLadder";
 import React, { useEffect, useState } from "react";
+import { LadderData } from "@/types/FixturesLadder";
 
-function DivisionOne() {
+import styles from "../../styles/ladder.module.scss";
+import FootballLoader from "@/components/loading-spinner/footballLoader";
+
+const DivisionOne = () => {
   const [sheetData, setSheetData] = useState<LadderData[]>([]);
   const [loading, setLoading] = useState<Boolean>(true);
 
@@ -14,7 +17,7 @@ function DivisionOne() {
         if (response.ok) {
           const data: LadderData[] = await response.json();
           setSheetData(data);
-          console.log(data); // Log the fetched data here
+          console.log(data);
           setLoading(false);
         } else {
           console.error("Failed to fetch data from the Google Sheet.");
@@ -30,16 +33,42 @@ function DivisionOne() {
   return (
     <div>
       <h1>Monday United 2</h1>
-      <ul>
-        {sheetData.map((row, index) => (
-          <li key={index}>
-            {row["Team name"]}, GP: {row.GP}, W: {row.W}, D: {row.D}, L: {row.L}
-            , GF: {row.GF}, GA: {row.GA}, GD: {row.GD}, PTS: {row.PTS}
-          </li>
-        ))}
-      </ul>
+      {loading ? (
+        <FootballLoader />
+      ) : (
+        <div className={styles.tableContainer}>
+          <table className={styles.table}>
+            <thead>
+              <tr>
+                <th className={styles.tableHeader}>Team Name</th>
+                <th className={styles.tableHeader}>GP</th>
+                <th className={styles.tableHeader}>W</th>
+                <th className={styles.tableHeader}>L</th>
+                <th className={styles.tableHeader}>GF</th>
+                <th className={styles.tableHeader}>GA</th>
+                <th className={styles.tableHeader}>GD</th>
+                <th className={styles.tableHeader}>Total Pts</th>
+              </tr>
+            </thead>
+            <tbody>
+              {sheetData.map((row, index) => (
+                <tr key={index}>
+                  <td className={styles.tableCells}>{row["Team name"]}</td>
+                  <td className={styles.tableCells}>{row.GP}</td>
+                  <td className={styles.tableCells}>{row.W}</td>
+                  <td className={styles.tableCells}>{row.L}</td>
+                  <td className={styles.tableCells}>{row.GF}</td>
+                  <td className={styles.tableCells}>{row.GA}</td>
+                  <td className={styles.tableCells}>{row.GD}</td>
+                  <td className={styles.tableCells}>{row.PTS}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
     </div>
   );
-}
+};
 
 export default DivisionOne;
