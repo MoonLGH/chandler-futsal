@@ -4,7 +4,7 @@ import { LadderData } from "@/types/FixturesLadder";
 import styles from "../../styles/Ladder.module.scss";
 import FootballLoader from "@/components/loading-spinner/footballLoader";
 
-const DivisionOne = () => {
+const DivisionThree = () => {
   const [sheetData, setSheetData] = useState<LadderData[]>([]);
   const [loading, setLoading] = useState<Boolean>(true);
 
@@ -12,7 +12,7 @@ const DivisionOne = () => {
     async function fetchData() {
       try {
         const response = await fetch(
-          "https://script.google.com/macros/s/AKfycbxMDxHbHUndC5xnyB3hWJSUKqvfSa6k68xQsSq6lfEe4keK4yb9TCgAvJBqqf3RM_mm/exec?sheet=GroupA&startCell=H16&endCell=P24"
+          "https://script.google.com/macros/s/AKfycbxMDxHbHUndC5xnyB3hWJSUKqvfSa6k68xQsSq6lfEe4keK4yb9TCgAvJBqqf3RM_mm/exec?sheet=GroupC&startCell=H16&endCell=P21"
         );
         if (response.ok) {
           const data: LadderData[] = await response.json();
@@ -32,7 +32,7 @@ const DivisionOne = () => {
 
   return (
     <div>
-      <h1>Monday United 1</h1>
+      <h1>Monday United 3</h1>
       {loading ? (
         <>
           <FootballLoader />
@@ -77,4 +77,4 @@ const DivisionOne = () => {
   );
 };
 
-export default DivisionOne;
+export default DivisionThree;
