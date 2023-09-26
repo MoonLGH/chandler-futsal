@@ -2,6 +2,9 @@
   --backgroundColor: #2c2c2c;
   --offWhite: #f1eee3;
   --purple: #a3a7fd;
+  --darkPurple: #8e3bf5;
+  --midBlue: #5b79f2;
+  --fluroBlue: #05e5f4;
 }
 
 * {
@@ -14,10 +17,12 @@
 html,
 body {
   max-width: 100vw;
-  overflow-x: hidden;
+  // overflow-x: hidden;
   background-color: var(--backgroundColor);
   color: var(--offWhite);
   font-family: "Lato", sans-serif;
+  display: flex;
+  margin: 0 auto;
 }
 
 a {

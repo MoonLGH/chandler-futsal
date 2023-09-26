@@ -1,7 +1,10 @@
+import Navigation from "@/components/navigation/Navigation";
+
 export default function Home() {
   return (
-    <>
-      <h1>Welcome to Chandler Futsal</h1>
-    </>
+    <main>
+      <h1>Chandler Eagles Futsal</h1>
+      <Navigation />
+    </main>
   );
 }

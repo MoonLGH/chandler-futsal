@@ -9,8 +9,17 @@
 }
 
 .table {
-  width: 100%;
   border-collapse: collapse;
+  margin-top: 20px;
+
+  thead {
+    background-image: linear-gradient(
+      to bottom right,
+      var(--darkPurple),
+      var(--midBlue),
+      var(--fluroBlue)
+    );
+  }
 }
 
 .tableHeader,

@@ -3,7 +3,7 @@ import styles from "./FootballLoader.module.scss";
 
 const FootballLoader = () => {
   return (
-    <div className={styles.mainFader} responsive-height-comments>
+    <div className={styles.mainFader} responsive-height-comments="true">
       <div className={styles.loader}>
         <svg viewBox="0 0 866 866" xmlns="http://www.w3.org/2000/svg">
           <svg
