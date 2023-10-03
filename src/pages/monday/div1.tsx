@@ -46,17 +46,17 @@ const DivisionOne = () => {
           <table className={styles.table}>
             <thead>
               <tr>
-                <th className={styles.tableHeader}>Team Name</th>
-                <th className={styles.tableHeader}>Played</th>
-                <th className={styles.tableHeader}>W</th>
-                <th className={styles.tableHeader}>L</th>
-                <th className={styles.tableHeader}>GF</th>
-                <th className={styles.tableHeader}>GA</th>
-                <th className={styles.tableHeader}>GD</th>
-                <th className={styles.tableHeader}>Total Pts</th>
+                <th className={styles.tableHeaders}>Team Name</th>
+                <th className={styles.tableHeaders}>Played</th>
+                <th className={styles.tableHeaders}>W</th>
+                <th className={styles.tableHeaders}>L</th>
+                <th className={styles.tableHeaders}>GF</th>
+                <th className={styles.tableHeaders}>GA</th>
+                <th className={styles.tableHeaders}>GD</th>
+                <th className={styles.tableHeaders}>Total Pts</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className={styles.tableBody}>
               {sheetData.map((row, index) => (
                 <tr key={index}>
                   <td className={styles.tableCells}>{row["Team name"]}</td>
