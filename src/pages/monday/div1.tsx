@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { LadderData } from "@/types/FixturesLadder";
 
-import styles from "../../styles/ladder.module.scss";
+import styles from "@/tyles/ladder.module.scss";
 import FootballLoader from "@/components/loading-spinner/footballLoader";
 
 const DivisionOne = () => {
